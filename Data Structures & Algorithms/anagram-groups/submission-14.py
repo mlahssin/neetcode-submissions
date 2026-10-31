@@ -1,0 +1,82 @@
+# from collections import defaultdict
+
+
+# class Solution:
+#     def groupAnagrams(self, strs: List[str]) -> List[List[str]]:
+#         hash_set = defaultdict(list)
+
+#         for st in strs:
+#             hash_list = [0] * 26
+#             for c in st:
+#                 index_c = ord(c) - ord('a')
+
+#                 hash_list[index_c] += 1
+
+#             hash_str = tuple(hash_list)
+            
+#             hash_set[hash_str].append(st)
+        
+#         return list(hash_set.values())
+
+
+
+
+from collections import defaultdict
+
+class Solution:
+    def groupAnagrams(self, strs: List[str]) -> List[List[str]]:
+        
+        my_dict = defaultdict(list)
+
+        for s in strs:
+            
+            hash_word = [0] * 26
+            for c in s:
+                
+                hash_word[ord(c) - ord('a')] += 1
+            
+            
+            my_dict[tuple(hash_word)].append(s)
+        
+        return list(my_dict.values())
+
+                
+        
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
